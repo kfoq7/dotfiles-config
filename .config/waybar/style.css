@@ -1,0 +1,376 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Catppuccin Mocha */
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+  font-size: 97%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+/* @import "../waybar/style/catppuccin-themes/mocha.css"; */
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background: transparent;
+  border-radius: 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.empty,
+window#waybar.empty #window {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+}
+
+#taskbar button,
+#workspaces button {
+  color: @overlay0;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  padding-right: 4px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  border-radius: 10px;
+  color: @peach;
+  background-color: #fff;
+  /* padding-left: 2px; */
+  /* padding-right: 2px; */
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.persistent {
+  color: #fff;
+  border-radius: 10px;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  /* color: @mauve; */
+  border-radius: 10px;
+  padding-right: 8px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.urgent {
+  color: @red;
+  border-radius: 0px;
+}
+
+/* This section can be use if you want to separate waybar modules */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: @background;
+  border: 0.5px solid @overlay0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  /* padding-right: 4px; */
+  /* padding-left: 4px; */
+  border-radius: 10px;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar button,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 6px;
+  padding-left: 6px;
+  color: #fff;
+}
+/*-----Indicators----*/
+#bluetooth,
+#backlight {
+  color: #fffef2;
+}
+
+#battery {
+  color: #fffef2;
+}
+
+@keyframes blink {
+  to {
+    color: @surface0;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @theme_text_color;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 -3px transparent;
+  border-radius: 8px;
+}
+
+#clock {
+  color: #fffef2;
+}
+
+#cpu {
+  color: #fffef2;
+}
+
+#custom-keyboard,
+#memory {
+  color: #fffef2;
+}
+
+#disk {
+  color: #fffef2;
+}
+
+#temperature {
+  color: azure;
+}
+
+#temperature.critical {
+  background-color: @red;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#keyboard-state {
+  color: @flamingo;
+}
+
+/* ---- 💫 Waybar Style using "One Half Dark (modded)" Theme 💫 ---- */
+
+/* --- DEFINE YOUR CUSTOM COLORS HERE --- */
+@define-color foreground #dcdfe4;
+@define-color background #001016;
+@define-color black #282c34;
+@define-color gray #5a6374;
+@define-color red #e06c75;
+@define-color green #98c379;
+@define-color yellow #e5c07b;
+@define-color blue #61afef;
+@define-color magenta #c678dd;
+@define-color cyan #56b6c2;
+@define-color white #dcdfe4;
+
+/* --- GENERAL STYLES --- */
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 97%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background: transparent;
+  border-radius: 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* --- MODULE GROUP STYLES --- */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: @background;
+  border: 1px solid @gray;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+
+/* --- GENERAL MODULE PADDING --- */
+#backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces,
+#custom-arch {
+  padding: 4px 6px;
+  margin: 0 3px; /* Adds a small gap between modules */
+}
+
+/* --- WORKSPACES AND TASKBAR --- */
+#taskbar button,
+#workspaces button {
+  color: @gray;
+  padding: 0 4px;
+  border-radius: 9px;
+  transition: all 0.3s ease;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  color: @yellow;
+  background-color: @gray;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @magenta;
+  padding: 0 8px;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+/* --- INDIVIDUAL MODULE COLORS --- */
+#window {
+  color: @white;
+}
+
+#clock {
+  color: @yellow;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.critical:not(.charging) {
+  color: @background;
+  background-color: @red;
+  animation-name: blink;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @gray;
+    color: @red;
+  }
+}
+
+#cpu {
+  color: @cyan;
+}
+
+#memory {
+  color: @blue;
+}
+
+#disk {
+  color: @magenta;
+}
+
+#temperature {
+  color: @red;
+}
+
+#temperature.critical {
+  background-color: @red;
+  color: @background;
+}
+
+#network {
+  color: @green;
+}
+#network.disconnected {
+  color: @red;
+}
+
+#pulseaudio {
+  color: @cyan;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#custom-arch {
+  color: @blue;
+  font-size: 110%;
+}
+
+#tray {
+  /* No specific color, uses default */
+}
