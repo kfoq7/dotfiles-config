@@ -1,0 +1,81 @@
+# Theme: One Half Dark (modded)
+# Adapted from your foot terminal palette
+
+# Main bg
+theme[main_bg]="#001016"
+
+# Main text color
+theme[main_fg]="#dcdfe4"
+
+# Title color for boxes
+theme[title]="#dcdfe4"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#61afef"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#ffffff"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#001016"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#5a6374"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#56b6c2"
+
+# Cpu box outline color
+theme[cpu_box]="#5a6374"
+
+# Memory/disks box outline color
+theme[mem_box]="#5a6374"
+
+# Net up/down box outline color
+theme[net_box]="#5a6374"
+
+# Processes box outline color
+theme[proc_box]="#5a6374"
+
+# Box divider line and small boxes line color
+theme[div_line]="#5a6374"
+
+# Temperature graph colors (Green -> Yellow -> Red)
+theme[temp_start]="#98c379"
+theme[temp_mid]="#e5c07b"
+theme[temp_end]="#e06c75"
+
+# CPU graph colors (Blue -> Cyan -> Magenta)
+theme[cpu_start]="#61afef"
+theme[cpu_mid]="#56b6c2"
+theme[cpu_end]="#c678dd"
+
+# Mem/Disk free meter (Green -> Cyan -> Blue)
+theme[free_start]="#98c379"
+theme[free_mid]="#56b6c2"
+theme[free_end]="#61afef"
+
+# Mem/Disk cached meter (Yellow -> Magenta -> Red)
+theme[cached_start]="#e5c07b"
+theme[cached_mid]="#c678dd"
+theme[cached_end]="#e06c75"
+
+# Mem/Disk available meter (Green -> Cyan -> Blue)
+theme[available_start]="#98c379"
+theme[available_mid]="#56b6c2"
+theme[available_end]="#61afef"
+
+# Mem/Disk used meter (Yellow -> Red -> Magenta)
+theme[used_start]="#e5c07b"
+theme[used_mid]="#e06c75"
+theme[used_end]="#c678dd"
+
+# Download graph colors (Blue -> Cyan -> Green)
+theme[download_start]="#61afef"
+theme[download_mid]="#56b6c2"
+theme[download_end]="#98c379"
+
+# Upload graph colors (Magenta -> Yellow -> Red)
+theme[upload_start]="#c678dd"
+theme[upload_mid]="#e5c07b"
+theme[upload_end]="#e06c75"

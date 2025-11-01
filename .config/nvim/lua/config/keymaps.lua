@@ -58,6 +58,7 @@ keymap.set("n", "<C-w><down>", "C-w>-")
 keymap.set("n", "<leader>rn", "IncRename")
 
 -- Diagnostics
--- keymap.set("n", "<C-j>", function()
---   vim.diagnostic.goto_next()
--- end, opts)
+keymap.set("n", "<C-j>", function()
+  -- vim.diagnostic.goto_next() # Deprecated
+  vim.diagnostic.jump({ count = 1, float = true })
+end, opts)
