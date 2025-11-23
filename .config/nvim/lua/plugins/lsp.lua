@@ -25,10 +25,24 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
+        ["*"] = {
+          keys = {
+            {
+              "gd",
+              function()
+                -- DO NOT RESUSE WINDOW
+                require("telescope.builtin").lsp_definitions({ reuse_win = false })
+              end,
+              desc = "Goto Definition",
+              has = "definition",
+            },
+          },
+        },
         cssls = {},
         tailwindcss = {
           classAttributes = {},
         },
+
         -- kotlin_language_server = {},
         tsserver = {
           root_dir = function(...)
@@ -185,21 +199,21 @@ return {
       setup = {},
     },
   },
-  {
-    "neovim/nvim-lspconfig",
-    opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      vim.list_extend(keys, {
-        {
-          "gd",
-          function()
-            -- DO NOT RESUSE WINDOW
-            require("telescope.builtin").lsp_definitions({ reuse_win = false })
-          end,
-          desc = "Goto Definition",
-          has = "definition",
-        },
-      })
-    end,
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = function()
+  --     local keys = require("lazyvim.plugins.lsp.keymaps").get()
+  --     vim.list_extend(keys, {
+  --       {
+  --         "gd",
+  --         function()
+  --           -- DO NOT RESUSE WINDOW
+  --           require("telescope.builtin").lsp_definitions({ reuse_win = false })
+  --         end,
+  --         desc = "Goto Definition",
+  --         has = "definition",
+  --       },
+  --     })
+  --   end,
+  -- },
 }
