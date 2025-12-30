@@ -1,0 +1,235 @@
+.bar-widget {
+  padding: 0.27rem 0.8rem;
+  border-radius: 10px;
+  transition: 0.3s;
+  background-color: rgba(#1c1a1a, 1);
+}
+
+// .battery-container {
+//   position: relative;
+//   min-width: 100px;
+//   min-height: 24px;
+//   background-color: rgba(#fff, 0.1);
+//   border-radius: 0.9rem;
+//   border: 2px solid rgba(#fff, 0.3);
+//   overflow: hidden;
+// }
+//
+// .battery-fill {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   bottom: 0;
+//   background: linear-gradient(90deg, rgba(#2ecc71, 0.8), rgba(#2ecc71, 0.6));
+//   border-radius: 0.7rem;
+//   transition: min-width 300ms ease;
+// }
+//
+// .battery-percent {
+//   position: relative;
+//   margin: 0 0.6rem;
+//   color: rgba(#fff, 1);
+//   font-weight: 600;
+//   z-index: 1;
+// }
+//
+// .charging .battery-fill {
+//   background: linear-gradient(90deg, rgba(#2ecc71, 1), rgba(#27ae60, 0.8));
+//   animation: charging-pulse 2s ease-in-out infinite;
+// }
+//
+// .battery-low .battery-fill {
+//   background: linear-gradient(90deg, rgba(#e74c3c, 0.9), rgba(#c0392b, 0.7));
+// }
+//
+// .battery-low .battery-percent {
+//   color: rgba(#e74c3c, 1);
+// }
+//
+// @keyframes charging-pulse {
+//   0%, 100% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0.7;
+//   }
+// }
+
+// .battery-icon {
+//   margin: 0.2rem 0.6rem;
+// }
+
+.battery {
+  // background-color: rgba(#c9c9c9, 0.9);
+  background: linear-gradient(
+    to right,
+    rgba(#fff, 0.9) 0%,
+    rgba(#fff, 0.9) calc(1% * var(--progress, 0)),
+    rgba(#c9c9c9, 0.68) calc(1% * var(--progress, 0)),
+    rgba(#c9c9c9, 0.68) 100%
+  );
+  border-radius: 0.9rem;
+}
+
+.battery-percent {
+  margin: 0 0.3rem;
+  color: rgba(#1c1a1a, 1);
+}
+
+.charging {
+  background: linear-gradient(
+    to right,
+    rgba(#2ecc71, 0.9) 0%,
+    rgba(#2ecc71, 0.9) calc(1% * var(--progress, 0)),
+    rgba(#2ecc71, 0.5) calc(1% * var(--progress, 0)),
+    rgba(#2ecc71, 0.5) 100%
+  );
+  color: #2ecc71;
+}
+
+.battery-low {
+  background: linear-gradient(
+    to right,
+    rgba(#e74c3c, 0.9) 0%,
+    rgba(#e74c3c, 0.9) calc(1% * var(--progress, 0)),
+    rgba(#e74c3c, 0.5) calc(1% * var(--progress, 0)),
+    rgba(#e74c3c, 0.5) 100%
+  );
+}
+
+.battery-low .battery-percent {
+  color: rgba(#1c1a1a, 0.9);
+}
+//
+.kb-layout {
+  background: transparent;
+  padding: 0 0.25rem;
+  margin: 0 0.25rem;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  color: white;
+
+  &:hover {
+    background-color: rgba(gray, 0.1);
+  }
+}
+
+$bg: #262424;
+$bg-light: #261d1e;
+$fg: #f0dedf;
+$active: #fff;
+$unactive: #d7c1c3;
+
+.workspaces {
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  background-color: $bg;
+  margin: 0 0.5rem;
+  margin-left: 0;
+}
+
+.workspace {
+  // @include hover($primaryContainer);
+  border-radius: 1rem;
+  margin: 0 0.25rem;
+  min-width: 0.7rem;
+  min-height: 0.7rem;
+  transition: 0.3s;
+
+  label {
+    margin: 0 0.25rem;
+  }
+
+  &.active {
+    // @include hover($primary);
+    // min-width: 2rem;
+    background-color: rgba(white, 0.9);
+    color: black;
+    border-radius: 1rem;
+  }
+}
+
+.system-stats {
+  background-color: rgba(#1c1a1a, 1);
+  padding: 0rem 0.2rem;
+  transition: all 0.3s ease;
+  color: white;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(gray, 0.3);
+  }
+
+  &:hover {
+    background-color: rgba(#262424, 1);
+  }
+}
+
+.system-icon {
+  // font-size: 1rem;
+  color: rgba(white, 0.9);
+}
+
+.system-label {
+  font-size: 0.9rem;
+  color: rgba(white, 0.95);
+}
+
+// .system-stats {
+//   background-color: rgba(#1c1a1a, 1);
+//   border-radius: 1px;
+//   transition: all 0.3s ease;
+//
+//   &:hover {
+//     background-color: rgba(#262424, 1);
+//   }
+// }
+//
+// .cpu-circle,
+// .ram-circle {
+//   min-width: 16px;
+//   min-height: 16px;
+//   border-radius: 50%;
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: rgba(white, 0.1);
+//
+//   // Circular progress effect using conic-gradient
+//   background: conic-gradient(
+//     from -90deg,
+//     transparent 0deg,
+//     transparent calc(3.6deg * (100 - var(--progress, 0))),
+//     rgba(white, 0.1) calc(3.6deg * (100 - var(--progress, 0)))
+//   );
+//
+//   transition: background 0.3s ease;
+// }
+//
+// .cpu-circle {
+//   // CPU progress ring (blue)
+//   background: conic-gradient(
+//     from -90deg,
+//     #3498db 0deg,
+//     #3498db calc(3.6deg * var(--progress, 0)),
+//     rgba(white, 0.1) calc(3.6deg * var(--progress, 0))
+//   );
+// }
+//
+// .ram-circle {
+//   // RAM progress ring (green)
+//   background: conic-gradient(
+//     from -90deg,
+//     #2ecc71 0deg,
+//     #2ecc71 calc(3.6deg * var(--progress, 0)),
+//     rgba(white, 0.1) calc(3.6deg * var(--progress, 0))
+//   );
+// }
+//
+// .stat-icon {
+//   font-size: 1rem;
+//   color: white;
+//   font-weight: bold;
+// }

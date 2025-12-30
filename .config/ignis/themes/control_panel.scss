@@ -1,0 +1,9 @@
+.control-center {
+  @include window;
+  min-width: 28rem;
+  padding: 0;
+
+  .control-center-widget {
+    padding: 1rem;
+  }
+}
