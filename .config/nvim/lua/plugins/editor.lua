@@ -25,6 +25,11 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
+            file_ignore_patterns = {
+              "node_modules/.*",
+              ".git/.*",
+            },
+            sorting_strategy = "ascending",
           })
         end,
         desc = "Lists files in your current working directory, respects .gitignore",

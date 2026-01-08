@@ -42,7 +42,7 @@ return {
         tailwindcss = {
           classAttributes = {},
         },
-
+        rust_analyzer = {},
         -- kotlin_language_server = {},
         tsserver = {
           root_dir = function(...)
