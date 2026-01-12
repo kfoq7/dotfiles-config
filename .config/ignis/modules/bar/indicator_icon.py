@@ -5,7 +5,8 @@ from ignis.services.network import Ethernet, Wifi
 class IndicatorIcon(widgets.Icon):
     def __init__(self, css_classes: list[str] = [], **kwargs):
         super().__init__(
-            style="margin-right: 0.5rem;",
+            # style="margin-right: 0.5rem;",
+            pixel_size=13,
             css_classes=["unset", *css_classes],
             **kwargs,
         )

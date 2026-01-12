@@ -15,11 +15,15 @@ def format_uptime(value: tuple[int, int, int, int]) -> str:
 class User(widgets.Box):
     def __init__(self):
         user_image = widgets.Picture(
-            image="https://avatars.githubusercontent.com/u/83372435?v=4",
+            # image="https://avatars.githubusercontent.com/u/83372435?v=4",
+            # image="/home/kfoq7/Pictures/anime-girl-neon-4k-wallpaper.jpg",
+            # image=utils.read_file(uri="https://avatars.githubusercontent.com/u/83372435?v=4", decode=False),
+            # image=utils.read_file(path="~/Pictures/kfoq7.jpg", decode=True),
+            image="/home/kfoq7/Pictures/kfoq7.jpg",
             width=44,
             height=44,
             content_fit="cover",
-            style="border-radius: 10rem;"
+            style="border-radius: 10rem; margin-right: 20px;"
         )
 
         username = widgets.Box(

@@ -3,6 +3,7 @@ from ignis.services.notifications import NotificationService
 
 from .widgets import (
     Workspaces,
+    # CurrentPath,
     Battery,
     HyprlandKbLayout,
     StatusPill,
@@ -43,8 +44,8 @@ class Bar(widgets.Window):
             spacing=10,
             child=[
                 DistroIcon(),
+                # CurrentPath(), maybe should be clear
                 SystemStats(),
-                # CurrentPath(),
             ]
         )
 

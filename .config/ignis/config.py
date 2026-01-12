@@ -7,15 +7,17 @@ from ignis.options import options
 from ignis.css_manager import CssInfoPath, CssManager
 
 from modules import Bar, ControCenter, NotificationPopup
-from modules.user_options import user_options
+from user_options import user_options
 
 app = IgnisApp.get_initialized()
 css_manager = CssManager.get_default()
 
 WallpaperService.get_default()
 
+
 def format_scss_var(name: str, val: str) -> str:
     return f"${name}: {val};\n"
+
 
 def patch_style_scss(path: str) -> str:
     with open(path) as file:
@@ -50,6 +52,5 @@ options.wallpaper.set_wallpaper_path(os.path.expanduser('~/Pictures/anime-girl-w
 
 NotificationPopup(0)
 Bar()
-
 
 ControCenter()
