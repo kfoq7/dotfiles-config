@@ -10,7 +10,7 @@ from .widgets import (
     SystemStats
 )
 from .widgets.distro_icon import DistroIcon
-from modules.shared import Clock
+from modules.shared import Clock, MediaPlayer
 
 notifications = NotificationService.get_default()
 
@@ -53,6 +53,7 @@ class Bar(widgets.Window):
         return widgets.Box(
             spacing=10,
             child=[
+                MediaPlayer("Bar"),
                 Workspaces(),
                 Clock(),
                 Battery(),
