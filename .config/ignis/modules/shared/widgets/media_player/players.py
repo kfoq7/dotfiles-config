@@ -1,3 +1,6 @@
+import os
+
+import ignis
 from ignis import  widgets, utils
 from ignis.css_manager import CssManager, CssInfoString
 from ignis.services.mpris import MprisPlayer
@@ -10,26 +13,29 @@ material = MaterialService.get_default()
 css_manager = CssManager.get_default()
 
 MEDIA_TEMPLATE = utils.get_current_dir() + "/media.scss"
-MEDIA_ART_FALLBACK = '/media'
+MEDIA_SCSS_CACHE_DIR = ignis.CACHE_DIR + '/media'
+MEDIA_ART_FALLBACK = utils.get_current_dir() + '/../../../../misc/media-art-fallback.png'
+
+os.makedirs(MEDIA_SCSS_CACHE_DIR, exist_ok=True)
 
 
 class PlayerBar(widgets.Box):
     def __init__(self, player: MprisPlayer) -> None:
         self._player = player
+        self._colors_path = f"{MEDIA_SCSS_CACHE_DIR}/{self.clean_desktop_entry()}.scss"
 
         self._player.connect("closed", lambda x: self.destroy())
         self._player.connect("notify::art-url", lambda x, y: self.load_colors())
         self.load_colors()
 
         super().__init__(
-            css_classes=["player-bar", self.get_css("media")],
+            css_classes=["player-bar", self.get_css("media-image-gradient")],
             child=[
                 widgets.Label(
                     label=self._player.bind(
                         "title",
                         transform=lambda title: f"󰓇 {title}",
                     ),
-                    css_classes=[self.get_css("media-image-gradient")],
                     justify="left",
                     ellipsize="end",
                     max_width_chars=12,
@@ -48,7 +54,7 @@ class PlayerBar(widgets.Box):
         colors["desktop_entry"] = self.clean_desktop_entry()
 
         with open(MEDIA_TEMPLATE) as file:
-            template_rendered = Template(file.read()).render()
+            template_rendered = Template(file.read()).render(colors)
 
         if self._player.desktop_entry in css_manager.list_css_info_names():
             css_manager.remove_css(self._player.desktop_entry)
@@ -57,7 +63,7 @@ class PlayerBar(widgets.Box):
             CssInfoString(
                 name=self._player.desktop_entry,
                 compiler_function=lambda x: utils.sass_compile(string=x),
-                string=template_rendered
+                string=template_rendered,
             )
         )
 

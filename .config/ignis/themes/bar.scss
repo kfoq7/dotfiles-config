@@ -120,11 +120,15 @@ $fg: #f0dedf;
 $active: #fff;
 $unactive: #d7c1c3;
 
+.player-bar {
+  padding: 0.06rem 0.5rem;
+}
+
 .workspaces {
   border-radius: 1rem;
-  padding: 0 0.5rem;
+  padding: 0.06rem 0.5rem;
   background-color: $bg;
-  margin: 0 0.5rem;
+  // margin: 0 0.5rem;
   margin-left: 0;
 }
 

@@ -39,17 +39,18 @@ class VolumeIcon(IndicatorIcon):
 
 
 class StatusPill(widgets.Button):
-    def __init__(self):
+    def __init__(self, on_click = None):
         super().__init__(
             css_classes=["unset"],
             valign="center",
             halign="fill",
             style="background-color: #262424; padding: 0.01rem 0.3rem; border-radius: 12px;",
-            on_click=toggle_control_panel,
+            on_click=on_click if on_click else toggle_control_panel,
             child=widgets.Box(
                 spacing=8,
                 child=[
                     WifiIcon(),
+                    EthernetIcon(),
                     VolumeIcon(),
                 ]
             )

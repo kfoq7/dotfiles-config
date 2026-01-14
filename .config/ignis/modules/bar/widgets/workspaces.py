@@ -9,6 +9,7 @@ class WorkspacesButton(Widget.Button):
         css_classes = ["workspace", "unset"]
         if is_active:
             css_classes.append("active")
+
         if not exists:
             css_classes.append("empty")
 

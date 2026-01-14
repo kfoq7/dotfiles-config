@@ -28,9 +28,10 @@ class MaterialService(BaseService):
         pixel_array = [image_data[_] for _ in range(0, pixel_len, 1)]
 
         colors = QuantizeCelebi(pixel_array, 128)
-        argb = Score.score(colors)[0]
 
+        argb = Score.score(colors)[0]
         hct = Hct.from_int(argb)
+
         scheme = SchemeTonalSpot(hct, True, 0.0)
 
         material_colors = {}
@@ -44,6 +45,6 @@ class MaterialService(BaseService):
 
         return material_colors
 
-    def generate_colors(self, path: str) -> None:
-        colors = self.get_colors_from_img(path) # Dark mode is set it by default
-        # dark_colors = self.get_colors_from_img()
+    # def generate_colors(self, path: str) -> None:
+    #     colors = self.get_colors_from_img(path) # Dark mode is set it by default
+    #     # dark_colors = self.get_colors_from_img()

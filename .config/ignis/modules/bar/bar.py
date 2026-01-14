@@ -1,4 +1,5 @@
 from ignis import widgets
+from ignis.window_manager import WindowManager
 from ignis.services.notifications import NotificationService
 
 from .widgets import (
@@ -12,6 +13,7 @@ from .widgets import (
 from .widgets.distro_icon import DistroIcon
 from modules.shared import Clock, MediaPlayer
 
+window_manager = WindowManager.get_default()
 notifications = NotificationService.get_default()
 
 
@@ -50,25 +52,37 @@ class Bar(widgets.Window):
         )
 
     def __center(self):
+        self._player_bar = MediaPlayer("bar")
+
         return widgets.Box(
             spacing=10,
             child=[
-                MediaPlayer("Bar"),
+                self._player_bar,
                 Workspaces(),
                 Clock(),
                 Battery(),
             ],
         )
 
+
+
     def __right(self):
+        def toggle_control_panel(_):
+            window = window_manager.get_window("ignis_CONTROL_CENTER")
+            if window:
+                window.set_visible(not window.visible)
+                self._player_bar.set_visible(not window.visible)
+
         return widgets.Box(
             spacing=10,
             child=[
                 HyprlandKbLayout(),
                 # self.__current_notification(),
-                StatusPill(),
+                StatusPill(toggle_control_panel)
             ],
         )
+
+
 
     def __current_notification(self):
         return widgets.Label(
