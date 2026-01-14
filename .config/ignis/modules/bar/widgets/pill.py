@@ -45,7 +45,7 @@ class StatusPill(widgets.Button):
             valign="center",
             halign="fill",
             style="background-color: #262424; padding: 0.01rem 0.3rem; border-radius: 12px;",
-            on_click=on_click if on_click else toggle_control_panel,
+            on_click=toggle_control_panel,
             child=widgets.Box(
                 spacing=8,
                 child=[

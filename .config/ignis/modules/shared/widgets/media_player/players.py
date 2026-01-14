@@ -44,7 +44,8 @@ class PlayerBar(widgets.Box):
         )
 
     def destroy(self) -> None:
-        utils.Timeout(self.transition_duration, super().unparent)
+        super().unparent()
+        # utils.Timeout(self.transition_duration, super().unparent)
 
     def load_colors(self) -> None:
         art_url = self._player.art_url if self._player.art_url else MEDIA_ART_FALLBACK

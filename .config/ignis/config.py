@@ -47,10 +47,11 @@ css_manager.apply_css(
     )
 )
 
-options.wallpaper.set_wallpaper_path(os.path.expanduser('~/Downloads/anime-girl-horn-katana-sword-4k-wallpaper.jpg'))
+options.wallpaper.set_wallpaper_path(os.path.expanduser('~/Pictures/anime-girl-wink-katana-4k-wallpaper.jpg'))
 
 
 NotificationPopup(0)
 Bar()
+
 
 ControCenter()

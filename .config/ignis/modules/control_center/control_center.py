@@ -5,12 +5,6 @@ from .widgets import User
 
 network = NetworkService.get_default()
 
-# class WifiIcon():
-#     def __init__(self) -> None:
-#         super().__init__(
-#             device_type=network.wifi
-#         )
-
 
 class ControCenter(widgets.RevealerWindow):
     def __init__(self):

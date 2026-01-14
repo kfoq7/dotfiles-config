@@ -1,10 +1,10 @@
-from ignis.widgets import Widget
+from ignis import widgets
 from ignis.services.hyprland import HyprlandService
 
 hyprland = HyprlandService.get_default()
 
 
-class WorkspacesButton(Widget.Button):
+class WorkspacesButton(widgets.Button):
     def __init__(self, workspace_id: int, is_active: bool, exists: bool):
         css_classes = ["workspace", "unset"]
         if is_active:
@@ -18,20 +18,20 @@ class WorkspacesButton(Widget.Button):
 
         super().__init__(
             css_classes=css_classes,
-            child=Widget.Label(label=label),
+            child=widgets.Label(label=label),
             halign="start",
             valign="center",
             on_click=lambda _: hyprland.switch_to_workspace(workspace_id) if hyprland.is_available else None,
         )
 
 
-class Workspaces(Widget.Box):
+class Workspaces(widgets.Box):
     def __init__(self):
-        if not hyprland.is_available:
-            child = []
-        else:
+        child = []
+
+        if hyprland.is_available:
             child = [
-                Widget.EventBox(
+                widgets.EventBox(
                     css_classes=["workspaces"],
                     child=hyprland.bind_many(
                         ["workspaces", "active_workspace"],
