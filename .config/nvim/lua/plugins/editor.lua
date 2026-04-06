@@ -26,8 +26,42 @@ return {
             no_ignore = false,
             hidden = true,
             file_ignore_patterns = {
+              -- Node.js
               "node_modules/.*",
-              ".git/.*",
+              "%.next/.*",
+              "dist/.*",
+              "build/.*",
+              -- Git
+              "%.git/.*",
+              -- Java/Maven/Gradle
+              "target/.*",
+              "%.gradle/.*",
+              "gradle/.*",
+              "%.idea/.*",
+              "%.settings/.*",
+              "%.classpath",
+              "%.project",
+              "bin/.*",
+              "out/.*",
+              "%.class",
+              "%.jar",
+              "%.war",
+              -- Spring Boot specific
+              "BOOT%-INF/.*",
+              "META%-INF/MANIFEST%.MF",
+              -- Python
+              "__pycache__/.*",
+              "%.pyc",
+              "%.pyo",
+              "%.egg%-info/.*",
+              "venv/.*",
+              "%.venv/.*",
+              -- General
+              "%.DS_Store",
+              "%.swp",
+              "%.swo",
+              "%.log",
+              "coverage/.*",
             },
             sorting_strategy = "ascending",
           })

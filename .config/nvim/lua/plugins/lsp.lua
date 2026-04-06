@@ -43,7 +43,6 @@ return {
           classAttributes = {},
         },
         rust_analyzer = {},
-        -- kotlin_language_server = {},
         tsserver = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -81,47 +80,6 @@ return {
             },
           },
         },
-        -- vtsls = {
-        --   filetypes = {
-        --     "javascript",
-        --     "javascriptreact",
-        --     "javascript.jsx",
-        --     "typescript",
-        --     "typescriptreact",
-        --     "typescript.tsx",
-        --   },
-        --   settings = {
-        --     complete_function_calls = false,
-        --     javascript = {
-        --       suggest = {
-        --         completeFunctionCalls = false,
-        --       },
-        --       inlayHints = {
-        --         includeInlayParameterNameHints = "literal",
-        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        --         includeInlayFunctionParameterTypeHints = true,
-        --         includeInlayVariableTypeHints = false,
-        --         includeInlayPropertyDeclarationTypeHints = true,
-        --         includeInlayFunctionLikeReturnTypeHints = true,
-        --         includeInlayEnumMemberValueHints = true,
-        --       },
-        --     },
-        --     typescript = {
-        --       suggest = {
-        --         completeFunctionCalls = false,
-        --       },
-        --       inlayHints = {
-        --         includeInlayParameterNameHints = "all",
-        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        --         includeInlayFunctionParameterTypeHints = true,
-        --         includeInlayVariableTypeHints = true,
-        --         includeInlayPropertyDeclarationTypeHints = true,
-        --         includeInlayFunctionLikeReturnTypeHints = true,
-        --         includeInlayEnumMemberValueHints = true,
-        --       },
-        --     },
-        --   },
-        -- },
         html = {},
         yamlls = {
           settings = {
